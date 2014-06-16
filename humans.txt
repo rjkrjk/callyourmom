@@ -3,13 +3,19 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Chris DeLuca -- Developer -- @chrisjohndeluca
 
 # THANKS
 
-    <name>
+    Andy McCarthy
+    Sam Fox-Hartin
+    Laura Thomas
+    Brian Spach
+    Rich Krystoforski
+    Logan Herris
+    Sara Kaplan
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, Modernizr
+    jQuery, HTML 5 Shim
