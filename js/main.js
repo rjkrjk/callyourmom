@@ -1,16 +1,17 @@
 var fnames = [],
 ftypes = [];
-fnames[0]='EMAIL';
-ftypes[0]='email';
-fnames[1]='FNAME';
-ftypes[1]='text';
-fnames[2]='LNAME';
-ftypes[2]='text';
+fnames[0] = 'EMAIL';
+ftypes[0] = 'email';
+fnames[1] = 'FNAME';
+ftypes[1] = 'text';
+fnames[2] = 'LNAME';
+ftypes[2] = 'text';
 try {
-  var jqueryLoaded=jQuery;
-  jqueryLoaded=true;
-} catch(err) {
-  var jqueryLoaded=false;
+  var jqueryLoaded = jQuery;
+  jqueryLoaded = true;
+}
+catch(err) {
+  var jqueryLoaded = false;
 }
 var head= document.getElementsByTagName('head')[0];
 if (!jqueryLoaded) {
@@ -18,8 +19,8 @@ if (!jqueryLoaded) {
   script.type = 'text/javascript';
   script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
   head.appendChild(script);
-  if (script.readyState && script.onload!==null){
-    script.onreadystatechange= function () {
+  if (script.readyState && script.onload !== null){
+    script.onreadystatechange = function () {
       'use strict';
       if (this.readyState === 'complete') {
         mce_preload_check();
@@ -31,7 +32,8 @@ if (!jqueryLoaded) {
 var err_style = '';
 try {
   err_style = mc_custom_error_style;
-} catch(e){
+}
+catch(e) {
   err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
 }
 var head= document.getElementsByTagName('head')[0];
@@ -53,8 +55,9 @@ function mce_preload_check(){
   }
   mce_preload_checks++;
   try {
-    var jqueryLoaded=jQuery;
-  } catch(err) {
+    var jqueryLoaded = jQuery;
+  }
+  catch(err) {
     setTimeout('mce_preload_check();', 250);
     return;
   }
@@ -97,14 +100,17 @@ function mce_init_form(){
               bday = true;
               fields[2] = {'value':1970};//trick birthdays into having years
             }
-            if ( fields[0].value === 'MM' && fields[1].value === 'DD' && (fields[2].value==='YYYY' || (bday && fields[2].value===1970) ) ){
+            if ( fields[0].value === 'MM' && fields[1].value === 'DD' && (fields[2].value === 'YYYY' || (bday && fields[2].value === 1970) ) ){
               this.value = '';
-            } else if ( fields[0].value==='' && fields[1].value==='' && (fields[2].value==='' || (bday && fields[2].value===1970) ) ){
+            }
+            else if ( fields[0].value === '' && fields[1].value === '' && (fields[2].value === '' || (bday && fields[2].value === 1970) ) ){
               this.value = '';
-            } else {
+            }
+            else {
               if (/\[day\]/.test(fields[0].name)){
                 this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;
-              } else {
+              }
+              else {
                 this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
               }
             }
@@ -133,10 +139,9 @@ function mce_init_form(){
       success: mce_success_cb
     };
     $('#mc-embedded-subscribe-form').ajaxForm(options);
-
-
   });
 }
+
 function mce_success_cb(resp){
   'use strict';
   $('#mce-success-response').hide();
@@ -168,34 +173,35 @@ function mce_success_cb(resp){
           msg = resp.msg;
         }
       }
-    } catch(e){
+    }
+    catch(e) {
       index = -1;
       msg = resp.msg;
     }
-    try{
-      if (index === -1){
-        $('#mce-'+resp.result+'-response').show();
-        $('#mce-'+resp.result+'-response').html(msg);
+    try {
+      if (index === -1) {
+        $('#mce-' + resp.result + '-response').show();
+        $('#mce-' + resp.result + '-response').html(msg);
       }
       else {
         err_id = 'mce_tmp_error_msg';
-        html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+        html = '<div id="' + err_id + '" style="' + err_style + '"> ' + msg + '</div>';
 
         var input_id = '#mc_embed_signup';
         var f = $(input_id);
-        if (ftypes[index]=='address'){
+        if (ftypes[index] === 'address') {
           input_id = '#mce-'+fnames[index]+'-addr1';
           f = $(input_id).parent().parent().get(0);
         }
-        else if (ftypes[index]=='date'){
-          input_id = '#mce-'+fnames[index]+'-month';
+        else if (ftypes[index] === 'date'){
+          input_id = '#mce-' + fnames[index] + '-month';
           f = $(input_id).parent().parent().get(0);
         }
         else {
-          input_id = '#mce-'+fnames[index];
+          input_id = '#mce-' + fnames[index];
           f = $().parent(input_id).get(0);
         }
-        if (f){
+        if (f) {
           $(f).append(html);
           $(input_id).focus();
         }
@@ -205,7 +211,7 @@ function mce_success_cb(resp){
         }
       }
     }
-    catch(e){
+    catch(e) {
       $('#mce-'+resp.result+'-response').show();
       $('#mce-'+resp.result+'-response').html(msg);
     }
