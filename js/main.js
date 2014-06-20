@@ -220,3 +220,12 @@ function mce_success_cb(resp){
   }
 }
 
+(function() {
+  'use strict';
+
+  // Date
+  var cymDate = document.getElementsByTagName('time');
+  cymDate[0].innerHTML = moment().format('hh:m A');
+
+})();
+
