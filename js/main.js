@@ -227,5 +227,10 @@ function mce_success_cb(resp){
   var cymDate = document.getElementsByTagName('time');
   cymDate[0].innerHTML = moment().format('hh:m A');
 
+  // Google Calendar
+  $('#calendar').gCalFlow({
+    calid: 'jc6f0uks1h7k5bp340kno4uboifg1f9g@import.calendar.google.com'
+  });
+
 })();
 
