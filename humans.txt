@@ -20,4 +20,4 @@
     HTML5, CSS3
     jQuery, HTML 5 Respond,
     jQuery Gcal Flow, Momentjs,
-    Bootstrap
+    Bootstrap, MailChimp
