@@ -225,9 +225,9 @@ function mce_success_cb(resp){
 
   // Date
   var cymDate = document.getElementsByTagName('time');
-  cymDate[0].innerHTML = moment().format('hh:m A');
+  cymDate[0].innerHTML = moment().format('h:m A');
   setInterval(function() {
-    cymDate[0].innerHTML = moment().format('hh:m A');
+    cymDate[0].innerHTML = moment().format('h:m A');
   }, 1000);
 
   // Google Calendar
