@@ -18,4 +18,6 @@
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    jQuery, HTML 5 Shim
+    jQuery, HTML 5 Respond,
+    jQuery Gcal Flow, Momentjs,
+    Bootstrap
